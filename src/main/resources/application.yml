@@ -1,0 +1,16 @@
+server:
+  port: 8099
+spring:
+  main:
+    web-application-type: reactive
+  cloud:
+    gateway:
+      routes:
+        - id: product
+          uri: http://localhost:8081
+          predicates:
+            - Path=/product/**
+
+  application:
+    name: GATEWAY
+
